@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Ninjas from './ninjas';
 
 class App extends Component {
   render() {
+    state = {
+      ninjas: [
+        { id:1, name:"Ryan", age:30, belt:"Blak" },
+        { id:2, name:"Jorj", age:25, belt:"Beown" },
+        { id:3, name:"David", age:34, belt:"Pink" },
+      ]
+    }
+
+    const {ninjas} = this.state;
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Ninjas ninjas={ninjas} />
       </div>
     );
   }
